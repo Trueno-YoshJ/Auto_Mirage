@@ -9,6 +9,7 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Login />} />
+      <Route path="/Auto_Mirage" element={<Login />} />
 
       <Route element={<LayoutWithNavbar />}>
         <Route path="/dashboard" element={<Dashboard />} />
