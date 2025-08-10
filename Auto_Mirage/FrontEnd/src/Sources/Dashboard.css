@@ -1,0 +1,134 @@
+.dashboard-bg {
+  min-height: 100vh;
+  background: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+  padding: 2rem 0;
+  font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+}
+
+.dashboard-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(44, 62, 80, 0.12);
+}
+
+.stats-row {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+  height: 20vh;
+}
+
+.stat-card {
+  flex: 1 1 200px;
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+  border-radius: 12px;
+  padding: 1.5rem 1.2rem;
+  box-shadow: 0 2px 12px rgba(44, 62, 80, 0.10);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 180px;
+}
+.logout-btn {
+  position: absolute;
+  top: 2rem;
+  right: 1rem;
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(44, 62, 80, 0.08);
+  transition: background 0.2s, transform 0.1s;
+  z-index: 10;
+}
+
+.logout-btn:hover {
+  background: linear-gradient(90deg, #764ba2  0%, #667eea 100%);
+  transform: translateY(-2px) scale(1.03);
+}
+.stat-title {
+  font-size: 1rem;
+  font-weight: 500;
+  opacity: 0.85;
+}
+
+.stat-value {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-top: 0.5rem;
+}
+
+.section-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #764ba2;
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+}
+
+.dashboard-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #faf9ff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(44, 62, 80, 0.06);
+}
+
+.dashboard-table th, .dashboard-table td {
+  padding: 0.9rem 1rem;
+  text-align: left;
+}
+
+.dashboard-table th {
+  background: #f3e8ff;
+  color: #4f3c8d;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.dashboard-table tr:nth-child(even) {
+  background: #f8f7fa;
+}
+
+.dashboard-table tr:hover {
+  background: #e9d8fd;
+  transition: background 0.2s;
+}
+
+.chart-box {
+  background: #f3e8ff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 1px 6px rgba(44, 62, 80, 0.07);
+}
+
+.notifications {
+  background: #fffbe6;
+  border-left: 5px solid #ffd700;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  color: #7c6f57;
+  font-size: 1rem;
+}
+
+@media (max-width: 900px) {
+  .stats-row {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .dashboard-container {
+    padding: 1rem;
+  }
+}

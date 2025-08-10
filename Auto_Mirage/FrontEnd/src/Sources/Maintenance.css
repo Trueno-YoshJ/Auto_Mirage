@@ -1,0 +1,167 @@
+.maintenance-container {
+  min-height: 100vh;
+  background: linear-gradient(120deg, #43cea2 0%, #185a9d 100%);
+  padding: 3rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+}
+
+.maintenance-container h2 {
+  color: #185a9d;
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  letter-spacing: 1px;
+  background: #fff;
+  padding: 0.7rem 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(44, 62, 80, 0.10);
+}
+
+.maintenance-container h3 {
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 2rem 0 1rem 0;
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 8px rgba(44, 62, 80, 0.10);
+}
+
+.maintenance-table {
+  width: 100%;
+  max-width: 900px;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(44, 62, 80, 0.10);
+  border-collapse: collapse;
+  margin-bottom: 2.5rem;
+  overflow: hidden;
+}
+
+.maintenance-table th, .maintenance-table td {
+  padding: 1rem 1.2rem;
+  text-align: left;
+}
+
+.maintenance-table th {
+  background: #e0f7fa;
+  color: #185a9d;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.maintenance-table tr:nth-child(even) {
+  background: #f8fafd;
+}
+
+.maintenance-table tr:hover {
+  background: #b2f7ef;
+  transition: background 0.2s;
+}
+
+.maintenance-table button {
+  background: linear-gradient(90deg, #43cea2 0%, #185a9d 100%);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.4rem 1rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+  margin-right: 0.5rem;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.maintenance-table button:hover {
+  background: linear-gradient(90deg, #185a9d 0%, #43cea2 100%);
+  transform: scale(1.05);
+}
+
+.maintenance-form {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(44, 62, 80, 0.10);
+  padding: 2rem 2.5rem;
+  max-width: 90%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.maintenance-form div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.maintenance-form label {
+  font-size: 1rem;
+  color: #185a9d;
+  font-weight: 500;
+}
+.form-section {
+  display: flex;
+  justify-content: center;
+  gap: 11rem;
+  flex-wrap: wrap; 
+  width: 100%;
+}
+
+.form-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.maintenance-form input[type="text"],
+.maintenance-form input[type="number"],
+.maintenance-form input[type="datetime-local"] {
+  padding: 0.7rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border 0.2s;
+  outline: none;
+}
+
+.maintenance-form input:focus {
+  border: 1.5px solid #43cea2;
+}
+
+.maintenance-form button[type="submit"],
+.maintenance-form button[type="button"] {
+  background: linear-gradient(90deg, #185a9d 0%, #43cea2 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 0.7rem;
+  transition: background 0.2s, transform 0.1s;
+  box-shadow: 0 2px 8px rgba(44, 62, 80, 0.08);
+}
+
+.maintenance-form button[type="submit"]:hover,
+.maintenance-form button[type="button"]:hover {
+  background: linear-gradient(90deg, #43cea2 0%, #185a9d 100%);
+  transform: translateY(-2px) scale(1.03);
+}
+
+@media (max-width: 700px) {
+  .maintenance-table, .maintenance-table th, .maintenance-table td {
+    font-size: 0.95rem;
+    padding: 0.6rem 0.5rem;
+  }
+  .maintenance-container h2 {
+    font-size: 1.3rem;
+    padding: 0.5rem 1rem;
+  }
+  .maintenance-form {
+    padding: 1rem 0.5rem;
+    max-width: 98vw;
+  }
+}
