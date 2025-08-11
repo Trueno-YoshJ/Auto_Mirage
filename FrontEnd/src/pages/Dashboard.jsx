@@ -23,7 +23,7 @@ export default function Dashboard() {
   return (
     <div className="dashboard-bg">
       <div className="dashboard-container">
-       <button className="logout-btn" onClick={() => window.location.href = '/'}>Logout</button>
+       <button className="logout-btn" onClick={() => window.location.href = '/Auto_Mirage'}>Logout</button>
         <h1 className="section-title">AutoCare Hub – Dashboard</h1>
 
         <div className="stats-row">
