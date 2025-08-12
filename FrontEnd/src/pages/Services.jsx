@@ -1,32 +1,44 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 import '../Sources/Services.css';
 
 export default function Services() {
-  const [services, setServices] = useState([
-    { id: 1, name: 'Oil Change', cost: 2500 },
-    { id: 2, name: 'Battery Replacement', cost: 12000 },
-    { id: 3, name: 'Brake Repair', cost: 8000 },
-  ]);
-
+  const [services, setServices] = useState([]);
   const [newName, setNewName] = useState('');
   const [newCost, setNewCost] = useState('');
 
-  const addService = (e) => {
+
+  useEffect(() => {
+    axios.get('/api/services')
+      .then(res => setServices(res.data))
+      .catch(err => console.error('Error fetching services:', err));
+  }, []);
+
+  const addService = async (e) => {
     e.preventDefault();
     if (!newName.trim() || !newCost) return;
 
-    const newService = {
-      id: Date.now(),
-      name: newName.trim(),
-      cost: Number(newCost),
-    };
-    setServices([...services, newService]);
-    setNewName('');
-    setNewCost('');
+    try {
+      const res = await axios.post('/api/services', {
+        name: newName.trim(),
+        cost: Number(newCost),
+      });
+      setServices([...services, res.data]);
+      setNewName('');
+      setNewCost('');
+    } catch (err) {
+      console.error('Error adding service:', err);
+    }
   };
 
-  const deleteService = (id) => {
-    setServices(services.filter(service => service.id !== id));
+  // Delete service
+  const deleteService = async (id) => {
+    try {
+      await axios.delete(`/api/services/${id}`);
+      setServices(services.filter(service => service.id !== id));
+    } catch (err) {
+      console.error('Error deleting service:', err);
+    }
   };
 
   return (
@@ -34,7 +46,7 @@ export default function Services() {
       <h2>Service Packages</h2>
 
       <ol className="services-list">
-        {services.map((service, index) => (
+        {services.map((service) => (
           <li key={service.id} className="service-item">
             <span>{service.name} - LKR {service.cost.toLocaleString()}</span>
             <button onClick={() => deleteService(service.id)} className="delete-btn">
