@@ -22,7 +22,7 @@ export default function Maintenance() {
   });
 
   useEffect(() => {
-    axios.get('http://localhost:8080/services')
+    axios.get('https://bs-latest.onrender.com/users')
       .then(response => {
         setRecords(response.data);
       })
@@ -31,14 +31,14 @@ export default function Maintenance() {
       });
   }, []);
 
-  const handleDelete = (id) => {
-    axios.delete(`http://localhost:8080/service/${id}`)
-      .then(() => {
-        setRecords(records.filter(record => record.id !== id));
-        alert("Record deleted successfully!");
-      })
-      .catch(err => console.error(err));
-  };
+const handleDelete = (id) => {
+  axios.delete(`https://bs-latest.onrender.com/users/${id}`)
+    .then(() => {
+      setRecords(records.filter(record => record.id !== id));
+      alert("Record deleted successfully!");
+    })
+    .catch(err => console.error(err));
+};
 
   const handleEditInputChange = (e) => {
     const { name, value } = e.target;
@@ -70,9 +70,9 @@ export default function Maintenance() {
 
   const handleEditSubmit = (e) => {
     e.preventDefault();
-    axios.put(`http://localhost:8080/service/${editData.id}`, editData)
+    axios.put(`https://bs-latest.onrender.com/user/${editData.id}`, editData)
       .then(() => {
-        axios.get('http://localhost:8080/services')
+        axios.get('https://bs-latest.onrender.com/users')
           .then(getRes => {
             setRecords(getRes.data);
             setEditData({
@@ -102,12 +102,12 @@ export default function Maintenance() {
       alert('Vehicle with this number already exists.');
       return;
     }
-    axios.post('http://localhost:8080/service', {
+    axios.post('https://bs-latest.onrender.com/user', {
       ...newData,
       paidValue: Number(newData.paidValue) || 0,
     })
       .then(() => {
-        axios.get('http://localhost:8080/services')
+        axios.get('https://bs-latest.onrender.com/users')
           .then(getRes => {
             setRecords(getRes.data);
             setNewData({
