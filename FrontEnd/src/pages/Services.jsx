@@ -9,7 +9,7 @@ export default function Services() {
 
 
   useEffect(() => {
-    axios.get('/api/services')
+    axios.get('https://test1-i5ew.onrender.com/services')
       .then(res => setServices(res.data))
       .catch(err => console.error('Error fetching services:', err));
   }, []);
@@ -19,7 +19,7 @@ export default function Services() {
     if (!newName.trim() || !newCost) return;
 
     try {
-      const res = await axios.post('/api/services', {
+      const res = await axios.post('https://test1-i5ew.onrender.com/services', {
         name: newName.trim(),
         cost: Number(newCost),
       });
@@ -31,10 +31,10 @@ export default function Services() {
     }
   };
 
-  // Delete service
+
   const deleteService = async (id) => {
     try {
-      await axios.delete(`/api/services/${id}`);
+      await axios.delete(`https://test1-i5ew.onrender.com/services/${id}`);
       setServices(services.filter(service => service.id !== id));
     } catch (err) {
       console.error('Error deleting service:', err);

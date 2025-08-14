@@ -22,7 +22,7 @@ export default function Maintenance() {
   });
 
   useEffect(() => {
-    axios.get('https://bs-latest.onrender.com/users')
+    axios.get('https://test1-i5ew.onrender.com/users')
       .then(response => {
         setRecords(response.data);
       })
@@ -32,7 +32,7 @@ export default function Maintenance() {
   }, []);
 
 const handleDelete = (id) => {
-  axios.delete(`https://bs-latest.onrender.com/users/${id}`)
+  axios.delete(`https://test1-i5ew.onrender.com/users/${id}`)
     .then(() => {
       setRecords(records.filter(record => record.id !== id));
       alert("Record deleted successfully!");
@@ -70,9 +70,9 @@ const handleDelete = (id) => {
 
   const handleEditSubmit = (e) => {
     e.preventDefault();
-    axios.put(`https://bs-latest.onrender.com/user/${editData.id}`, editData)
+    axios.put(`https://test1-i5ew.onrender.com/user/${editData.id}`, editData)
       .then(() => {
-        axios.get('https://bs-latest.onrender.com/users')
+        axios.get('https://test1-i5ew.onrender.com/users')
           .then(getRes => {
             setRecords(getRes.data);
             setEditData({
@@ -102,12 +102,12 @@ const handleDelete = (id) => {
       alert('Vehicle with this number already exists.');
       return;
     }
-    axios.post('https://bs-latest.onrender.com/user', {
+    axios.post('https://test1-i5ew.onrender.com/user', {
       ...newData,
       paidValue: Number(newData.paidValue) || 0,
     })
       .then(() => {
-        axios.get('https://bs-latest.onrender.com/users')
+        axios.get('https://test1-i5ew.onrender.com/users')
           .then(getRes => {
             setRecords(getRes.data);
             setNewData({
