@@ -19,10 +19,11 @@ export default function Services() {
     if (!newName.trim() || !newCost) return;
 
     try {
-      const res = await axios.post('https://test1-i5ew.onrender.com/services', {
-        name: newName.trim(),
-        cost: Number(newCost),
+      const res = await axios.post('https://test1-i5ew.onrender.com/service', {
+        service: newName.trim(),
+        paidValue: newCost.trim(),
       });
+
       setServices([...services, res.data]);
       setNewName('');
       setNewCost('');
@@ -48,7 +49,7 @@ export default function Services() {
       <ol className="services-list">
         {services.map((service) => (
           <li key={service.id} className="service-item">
-            <span>{service.name} - LKR {service.cost.toLocaleString()}</span>
+            <span>{service.service} - LKR {Number(service.paidValue).toLocaleString()}</span>
             <button onClick={() => deleteService(service.id)} className="delete-btn">
               Delete
             </button>
