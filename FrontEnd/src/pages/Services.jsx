@@ -49,7 +49,7 @@ export default function Services() {
       <ol className="services-list">
         {services.map((service) => (
           <li key={service.id} className="service-item">
-            <span>{service.service} - LKR {Number(service.paidValue).toLocaleString()}</span>
+            <span>{service.service} - Rs. {Number(service.paidValue).toLocaleString()}</span>
             <button onClick={() => deleteService(service.id)} className="delete-btn">
               Delete
             </button>
