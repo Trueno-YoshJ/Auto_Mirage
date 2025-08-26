@@ -32,7 +32,7 @@ export default function Maintenance() {
   }, []);
 
 const handleDelete = (id) => {
-  axios.delete(`https://test1-i5ew.onrender.com/users/${id}`)
+  axios.delete(`https://test1-i5ew.onrender.com/user/${id}`)
     .then(() => {
       setRecords(records.filter(record => record.id !== id));
       alert("Record deleted successfully!");
