@@ -35,7 +35,7 @@ export default function Services() {
 
   const deleteService = async (id) => {
     try {
-      await axios.delete(`https://test1-i5ew.onrender.com/services/${id}`);
+      await axios.delete(`https://test1-i5ew.onrender.com/service/${id}`);
       setServices(services.filter(service => service.id !== id));
     } catch (err) {
       console.error('Error deleting service:', err);
