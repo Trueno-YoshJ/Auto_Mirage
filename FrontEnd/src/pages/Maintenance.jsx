@@ -141,7 +141,7 @@ const handleDelete = (id) => {
             <th>Vehicle Number</th>
             <th>Owner Name</th>
             <th>Service Package</th>
-            <th>Paid Value (LKR)</th>
+            <th>Paid Value (Rs)</th>
             <th>Date</th>
             <th>Actions</th>
           </tr>
@@ -197,7 +197,7 @@ const handleDelete = (id) => {
               />
             </div>
             <div>
-              <label>Paid Value (LKR):</label>
+              <label>Paid Value (Rs):</label>
               <input
                 type="number"
                 name="paidValue"
@@ -254,7 +254,7 @@ const handleDelete = (id) => {
               />
             </div>
             <div>
-              <label>Paid Value (LKR):</label>
+              <label>Paid Value (Rs):</label>
               <input
                 type="number"
                 name="paidValue"
