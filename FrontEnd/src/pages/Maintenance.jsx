@@ -35,7 +35,6 @@ const handleDelete = (id) => {
   axios.delete(`https://test1-i5ew.onrender.com/user/${id}`)
     .then(() => {
       setRecords(records.filter(record => record.id !== id));
-      alert("Record deleted successfully!");
     })
     .catch(err => console.error(err));
 };
@@ -82,7 +81,6 @@ const handleDelete = (id) => {
               paidValue: '',
               dateTime: '',
             });
-            alert('Record updated successfully!');
           })
           .catch(getErr => {
             console.error('Error fetching updated records:', getErr);
@@ -117,7 +115,6 @@ const handleDelete = (id) => {
               paidValue: '',
               dateTime: '',
             });
-            alert('Record added successfully!');
           })
           .catch(getErr => {
             console.error('Error fetching updated records:', getErr);
